@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Texas House</title>
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="assets\css\TexasHouse.css">
+  <script src="assets\js\TexasHouse.js" defer></script>
+  <script src="assets\js\cart.js" defer></script>
+</head>
+
+<body>
+  <!-- navbar-->
+  <nav class="navbar" id="navbar">
+    <ul class="navbar-nav">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#About">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#booking">Book-Table</a></li>
+    </ul>
+    <div id="img-toggle"><img class="logo" id="logo" src="assets/img/Texas-House-1test - Copy.jpg"></div>
+    <ul class="navbar-nav">
+      <li><button class="cart-button" onclick="toggleCart()">Cart(<span id="cart-count">0</span>)</span></button></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#Reviews">Reviews</a></li>
+      <li><a href="#">Contact Us</a></li>
+
+    </ul>
+  </nav>
+
+  <header>
+    <div class="hero" id="home">
+      <div class="hero-text">
+        <h1>Texas House</h1>
+        <h2>The Home Of Flavors</h2>
+        <a href="#gallery" class="btn">View Our gallery</a>
+      </div>
+    </div>
+  </header>
+  <!-- About Section-->
+  <div id="About" class="container">
+    <div class="image-section">
+      <img src="assets/img/hero.png" alt="Food items" style="width: 100%;">
+    </div>
+    <div class="text-section">
+      <h2>About Us - Texas House</h2>
+
+      <p>Welcome to <strong>Texas House</strong>, where flavor meets passion! At<strong> Texas House</strong>, we take
+        pride in serving up an unforgettable dining experience, combining the bold, authentic tastes of Texas with a
+        touch of culinary creativity. Whether you're here for a hearty meal, a cup of freshly brewed coffee, or a
+        delightful dessert, our mission is to make every visit feel like home.</p>
+      <p>Our team of dedicated chefs crafts each dish with the finest ingredients, ensuring that every bite bursts with
+        flavor. From smoky barbecue classics to gourmet burgers and fresh salads, there's something for everyone to
+        enjoy. Paired with a warm and welcoming atmosphere,<strong>Texas House</strong> is more than just a
+        restaurant—it's a gathering place for family, friends, and food lovers.</p>
+      <p>Come and experience <i>"The Home of Flavors"</i>, where every plate tells a story, and every moment is a
+        celebration of good food and great company.</p>
+
+    </div>
+  </div>
+  <div id="gallery">
+    <h2 class="ourgallery"> OUR GALLERY</h2>
+  </div>
+  <div class="gallery">
+    <div width=25%><img src="assets/img/gallary1.jpg" /></div>
+    <div width=25%><img src="assets/img/gallary2.jpg" /></div>
+    <div width=25%><img src="assets/img/gallary3.jpg" /></div>
+    <div width=25%><img src="assets/img/gallary4.jpg" /></div>
+    <div width=25%><img src="assets/img/gallary5.jpg" /></div>
+    <div width=25%><img src="assets/img/gallary6.jpg" /></div>
+    <div width=25%><img src="assets/img/gallary7.jpg" /></div>
+    <div width=25%><img src="assets/img/gallary8.jpg" /></div>
+    <div width=25%><img src="assets/img/gallary9.jpg" /></div>
+    <div width=25%><img src="assets/img/gallary10.jpg" /></div>
+    <div width=25%><img src="assets/img/gallary11.jpg" /></div>
+    <div width=25%><img src="assets/img/gallary12.jpg" /></div>
+  </div>
+  <!--book a table-->
+  <div id="booking" class="booking">
+    <h2>BOOK A TABLE</h2>
+    <a href="bookaTable.html" class="btn">FIND TABLE</a>
+  </div>
+
+  <!--cart-->
+  <div class="cart" id="cart">
+    <h3>Cart</h3>
+    <ul id="cart-items"></ul>
+    <p><strong>Total: $<span id="total">0</span></strong></p>
+    <input type="text" id="coupon" class="coupon-input" placeholder="Enter coupon code">
+    <button class="checkout" onclick="checkout()">Checkout</button>
+    <button class="clear-cart" onclick="clearCart()">Clear Cart </button>
+    <div id="message" class="message"></div>
+  </div>
+  <!--menu-->
+  <div class="menu" id="menu">
+    <h2>Restaurant Menu</h2>
+    <div class="menu-buttons">
+      <button onclick="showCategory('food')">Food</button>
+      <button onclick="showCategory('drink')">Drinks</button>
+      <button onclick="showCategory('dessert')">Desserts</button>
+    </div>
+  </div>
+
+  <div id="food" class="items visible">
+    <h3>Food</h3>
+    <div class="grid">
+      <div class="item" data-name="American Burger" data-price="9">American Burger - $9</div>
+      <div class="item" data-name="Mushroom Burger" data-price="15">Mushroom Burger - $15</div>
+      <div class="item" data-name="steak" data-price="40">Steak - $40</div>
+      <div class="item" data-name="Pizza" data-price="20">Pizza - $20</div>
+      <div class="item" data-name="Mac and cheese" data-price="10">Mac and Cheese - $10</div>
+    </div>
+  </div>
+
+  <div id="drink" class="items">
+    <h3>Drinks</h3>
+    <div class="grid">
+      <div class="item" data-name="Cola" data-price="2">Cola - $2</div>
+      <div class="item" data-name="Orange Juice" data-price="3">Orange Juice - $3</div>
+      <div class="item" data-name="water" data-price="1">Water - $1</div>
+      <div class="item" data-name="Coffee" data-price="2">Coffee - $2</div>
+    </div>
+  </div>
+
+  <div id="dessert" class="items">
+    <h3>Desserts</h3>
+    <div class="grid">
+      <div class="item" data-name="Ice Cream" data-price="4">Ice Cream - $4</div>
+      <div class="item" data-name="Cheese Cake" data-price="5">Cheese Cake - $9</div>
+      <div class="item" data-name="Brownies" data-price="7">Brownies - $9</div>
+    </div>
+  </div>
+
+  <!--Modal for confirmation-->
+  <div id="confirmation-modal" class="modal">
+    <div class="modal-content">
+      <p id="confirmation-message"></p>
+      <button onclick="confirmAdd()">Yes</button>
+      <button onclick="closeModal()">No</button>
+    </div>
+  </div>
+
+<!--reviews-->
+  <section class="Reviews" id="Reviews">
+    <h2> REVIEWS</h2>
+    <div class="review-container">
+      <div class="review">
+        <h3>Hassan Jakmara</h3>
+        <div class="review-box">
+          <p>The steak was absolutely amazing! Perfectly balanced flavors, beautifully presented, and cooked to perfection. It’s a must-try for anyone visiting Texas House.</p>
+        </div>
+      </div>
+
+      <div class="review">
+        <h3>Haidar Habach</h3>
+        <div class="review-box">
+          <p>From appetizers to desserts, this restaurant exceeded all our expectations! Our family especially enjoyed the appetizers, the variety of desserts, and the hand-churned ice cream! The cheese Cake was a crowd-pleaser! Highly recommended!</p>
+        </div>
+      </div>
+
+      <div class="review">
+        <h3>Mohamad Hammoud</h3>
+        <div class="review-box">
+          <p>I’m still dreaming about my meal at Texas House! Each bite was a delight, and the presentation just blew us away. Don’t miss out on trying their pizza.</p>
+        </div>
+      </div>
+    </div>
+    <div class="survey">
+      <a href="survey.html">Leave Yours Here</a>
+    </div>
+  </section>
+  <div class="contact-section">
+    <!-- Google Map -->
+    <div class="map-wrapper">
+        <div id="map" style="width: 100%; height: 100%;"></div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="info-wrapper">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you! Visit us or reach out using the details below.</p>
+        <div class="contact-details">
+            <div><span>📍</span> Al Ouzai, Dahye, Lebanon</div>
+            <div><span>📞</span> +961 76 382 651</div>
+            <div><span>📧</span> TexasHouse@gmail.com</div>
+            <div><span>🕒</span> Mon - Fri: 9 AM - 6 PM</div>
+        </div>
+    </div>
+</div>
+
+<!-- Google Maps API -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
+
+<!--footer-->
+<footer class="footer">
+  <div class="Fcontainer">
+      <div class="footer-column">
+          <h3>EMAIL US</h3>
+          <p><a href="mailto:TexasHouse@gmail.com">TexasHouse@gmail.com</a></p>
+      </div>
+      <div class="footer-column">
+          <h3>CALL US</h3>
+          <p><a href="tel:+961 76 382 651">+961 76 382 651</a></p>
+      </div>
+      <div class="footer-column">
+          <h3>FIND US</h3>
+          <p>Al Ouzai, Dahye, Lebanon</p>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>© Copyright 2025 Made with ❤️ By Haidar Habach, Hassan Jakmara, Mohamad Ali Hammoud</p>
+  </div>
+</footer>
+</body>
+
+</html>
