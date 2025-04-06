@@ -1,0 +1,731 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #000000;
+}
+
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  /* Make the navbar fixed */
+  top: 0;
+  /* Fix it to the top of the viewport */
+  left: 0;
+  /* Align it to the left edge */
+  width: 100%;
+  /* Make the navbar span the full width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0px 25px 0;
+  background-color: #101010;
+  z-index: 1000;
+  /* Ensure it stays above other content */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  /* Add a subtle shadow for better visibility */
+}
+
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-nav a,
+.navbar-nav button {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s;
+}
+
+.navbar-nav li {
+  display: flex;
+  align-items: center;
+  margin: 0px 15px;
+}
+
+.navbar-nav button {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Active link styles */
+.navbar-nav a.active {
+  color: #d32f2f;
+}
+
+/* Hover effects */
+.navbar-nav a:hover,
+.navbar-nav button:hover {
+  color: #d32f2f;
+}
+
+/*la w2ta nenzal bl saf7a la ta7t tet8ayar el navbar*/
+.scrolled {
+  padding: 10px 0 8px 0;
+  background-color: rgba(10, 10, 10, .5);
+
+}
+
+
+.logo img {
+  height: 50px;
+  width: 100px;
+}
+
+/*la awal shi bibayen bl saf7a*/
+.hero {
+  background: linear-gradient(rgba(10, 10, 10, .85), rgba(10, 10, 10, .85)), url(../img/bg-hero.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-text {
+  padding: 20px;
+  border-radius: 10px;
+  width: 600px;
+  height: 100px;
+}
+
+.hero-text h1 {
+  font-size: 80px;
+  margin: 0;
+  color: #d32f2f;
+}
+
+.hero-text h2 {
+  font-size: 42px;
+  margin: 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: #d32f2f;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: #ff3333;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.image-section {
+  background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)), url("../img/TexasHouse-2.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  /* Ensure the section spans the full width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  padding: 10px;
+}
+
+
+.text-section {
+  flex: 1;
+  padding: 10px;
+  background-color: #101010;
+  color: #fff;
+  justify-items: center;
+  align-items: center;
+}
+
+.text-section h2 {
+  margin-top: 0;
+  font-size: 42px;
+  padding-top: 20px;
+  color: #d32f2f;
+}
+
+.text-section p {
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 120px 0 120px;
+}
+
+.image-section img {
+  animation: imgRotate 50s linear infinite;
+}
+
+@keyframes imgRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* lal sowar*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+
+.gal img {
+ 
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for both opacity and zoom */
+}
+
+.gal img:hover {
+  opacity: 0.4;
+}
+
+.gal img.zoomed {
+  opacity: 1 !important; /* Keep the opacity at 1 when zoomed */
+  transform: scale(2); /* Zoom effect */
+  position: fixed; /* Fix the image in place */
+  top: 50%; /* Vertically center the image */
+  left: 50%; /* Horizontally center the image */
+  transform: translate(-50%, -50%) scale(2); /* Center the image and apply zoom */
+  z-index: 1000; /* Make sure the zoomed image appears on top */
+  max-width: 20vw; /* Ensure it doesn't overflow the viewport */
+  max-height: 40vh; /* Ensure it doesn't overflow the viewport */
+}
+.ourgallery {
+  display: flex;
+  font-size: 65px;
+  justify-content: center;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+/* la ne7joz tawle*/
+.booking {
+  background: linear-gradient(rgba(10, 10, 10, .7), rgba(10, 10, 10, .7)), url(../img/book-table-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-attachment: fixed;
+  padding-bottom: 100px;
+}
+
+.booking h2 {
+  margin: 120px 0 90px 0;
+  font-size: 60px;
+}
+
+.booking2 {
+  padding-top: 100px;
+  color: white;
+  text-align: center;
+}
+
+.booking2 h2 {
+  margin-top: 100 px;
+  margin-bottom: 40px;
+}
+
+.booking2 form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Input Fields */
+.booking2 form input {
+  padding: 12px;
+  font-size: 1.12em;
+  border: 2px solid #d32f2f;
+  background: transparent;
+  color: #fff;
+  outline: none;
+  width: 230px;
+  margin-bottom: 120px;
+}
+
+/* Centering Button on a New Line */
+.booking2 form .btn-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Button Styling */
+.booking2 form button {
+  background: #d32f2f;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.booking2 form button:hover {
+  background: #ff3333;
+  transform: scale(1.1);
+}
+
+/*photo zoom */
+.zoomed {
+  transform: scale(1.7);
+  /* Lower zoom level */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.7);
+  /* Adjusted zoom */
+  max-width: 50vh;
+  /* Ensures image doesn't exceed 60% of viewport width */
+  max-height: 50vh;
+  /* Ensures image doesn't exceed 60% of viewport height */
+  z-index: 100;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* Soft shadow for better visibility */
+}
+
+/*restaurent layout*/
+.restaurant {
+  position: relative;
+  width: 1000px;
+  height: 523px;
+  margin: 20px auto 50px;
+  background: url('../img/Elegant-Restaurant-Plan-3D.jpg') no-repeat center center;
+  background-size: cover;
+  border: 2px solid #333;
+  border-radius: 20px;
+}
+
+.table {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  color: #101010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.table.booked {
+  color: #d32f2f;
+  cursor: not-allowed;
+}
+
+.booking-form {
+  margin-top: 20px;
+  display: none;
+  padding: 15px;
+  border-radius: 10px;
+  box-sizing: 2px 2px 5px rgba(10, 10, 10, 0.2);
+}
+
+.small-rect {
+  width: 60px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.big-rect {
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+}
+
+/*cart/menu*/
+.menu button,
+.checkout,
+.clear-cart {
+  cursor: pointer;
+  background-color: #d32f2f;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.menu-buttons button:hover,
+.checkout:hover,
+.clear-cart:hover {
+  background-color: #ff3333;
+  transform: scale(1.1);
+}
+.remove-button:hover{
+  background-color: #ff3333;
+  transform: scale(1.05);
+}
+.cart {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #101010;
+  padding: 20px;
+  width: 250px;
+  border-bottom: 0px 4px 8px rgba(10, 10, 10, .1);
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+
+  padding: 125px;
+  border-radius: 10px;
+}
+.menu h2{
+  font-size: 60px;
+  margin-bottom: 30px ;
+}
+.menu-buttons{
+  display: flex;
+  gap: 15px;
+}
+.menu-buttons button{
+  padding: 10px 20px;
+  font-size: 26px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.items {
+  display: none;
+  background-color: #101010;
+  color: #ff3333;
+  padding: 20px;
+  margin: 10px auto 250px;
+  width: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  
+}
+.items h3{
+  font-size: 58px;
+  display: flex;
+  justify-content: center;
+}
+.visible{
+  display: block;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.item{
+  display: flex;
+  font-size: 28px;
+  color: #fff;
+  padding: 10px 40px 50px;
+  background-color: #101010;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+
+.item:hover{
+  color: #d32f2f;
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content{
+  background-color: #101010;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal button{
+  background-color: #d32f2f;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius:5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.modal button:hover{
+  background-color: #ff3333;
+  transform: scale(1.1);
+}
+
+.remove-button{
+  background-color: #d32f2f;
+  color: #fff;
+  padding: 5px 10px;
+  border:none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.remove-button:hover {
+  background-color: #ff3333;
+}
+.coupon-input {
+  padding: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #d32f2f;
+}
+.message {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+.message.error {
+  color: #ff3333;
+}
+
+/*review section*/
+
+.Reviews{
+  padding: 0px 20px;
+  
+}
+
+.Reviews h2{
+  font-size: 50px;
+  margin-bottom: 60px;
+  justify-self: center;
+}
+/*review container*/
+.review-container{
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/*individual review*/
+.review{
+  width: 310px;
+  text-align: center;
+  
+}
+
+.review h3{
+  margin-bottom: 50px;
+  font-size: 25px;
+}
+.review-box{
+  background-color: #101010;
+  height: 200px;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.2);
+  font-size:16px;
+  line-height:1.3;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Triangle at the Top */
+.review-box::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgba(255, 255, 255, 0.1);
+}
+
+.survey{
+  margin: 150x;
+  display: flex;
+  justify-content: center;
+}
+
+.survey a{
+  text-decoration: none;
+  background-color: #d32f2f;
+  margin: 100px;
+  padding: 20px;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.survey a:hover{
+  background-color: #ff3333;
+}
+
+/*contact us*/
+.contact-section {
+  display: flex;
+  height: 100vh;
+  margin-bottom: 0%;
+}
+.map-wrapper {
+  width: 55%;
+  
+}
+.info-wrapper {
+  width: 45%;
+  
+  background: #1e1e1e;
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.contact-details {
+  margin-top: 20px;
+}
+.contact-details div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.contact-details span {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.footer {
+  background-color: #101010;
+  color: white;
+  padding: 20px 0;
+}
+
+.Fcontainer {
+  display: flex;
+  justify-content: space-around;
+  height: 200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 2;
+  align-self: center;
+  align-self: stretch;
+  margin: 40px 180px;
+}
+
+.footer-column h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  justify-self: center;
+}
+
+.footer-column p {
+  margin: 0;
+  font-size: 14px;
+}
+.footer p a,.footer p{
+  color: #d32f2f;
+}
+.footer p a:hover{
+color: #ff3333;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #444;
+  margin-top: 20px;
+}
+.footer-bottom p{
+  color: #fff;
+}
